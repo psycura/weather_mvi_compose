@@ -3,6 +3,7 @@ package com.example.weatherappmvi.domain.usecase
 import com.example.weatherappmvi.domain.repository.SearchRepository
 import org.koin.core.annotation.Factory
 
+@Factory
 class SearchUseCase(
     private val searchRepository: SearchRepository
 ) {
