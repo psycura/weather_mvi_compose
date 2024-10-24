@@ -12,11 +12,11 @@ class WeatherRepositoryImpl(
     private val apiService: ApiService
 ) : WeatherRepository {
     override suspend fun getWeather(cityId: Int): Weather {
-        return apiService.loadCurrentWeather("${PREFIX_CITY_ID}cityId").toEntity()
+        return apiService.loadCurrentWeather("${PREFIX_CITY_ID}$cityId").toEntity()
     }
 
     override suspend fun getForecast(cityId: Int): Forecast {
-        return apiService.getForecast("${PREFIX_CITY_ID}cityId").toEntity()
+        return apiService.getForecast("${PREFIX_CITY_ID}$cityId").toEntity()
     }
 
     private companion object {
