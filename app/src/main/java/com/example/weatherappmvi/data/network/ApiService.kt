@@ -31,7 +31,7 @@ class ApiService() {
             config {
                 followRedirects(true)
             }
-            addInterceptor {chain ->
+            addInterceptor { chain ->
                 val originalRequest = chain.request()
                 val newUrl = originalRequest.url.newBuilder()
                     .addQueryParameter("key", BuildConfig.WEATHER_API_KEY)
@@ -94,6 +94,4 @@ class ApiService() {
                 parameters.append("q", query)
             }
         }.body()
-
-
 }
